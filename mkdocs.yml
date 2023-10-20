@@ -1,0 +1,113 @@
+site_name: TickLab - Start here, go anywhere
+site_url: https://ngyngcphu.github.io/mkdocs-tool/
+site_author: Nguyen Ngoc Phu
+site_description: Tổng hợp nội dung chia sẻ kiến thức trong quá trình nghiên cứu khoa học và phát triển dự án tại các phòng ban của TickLab.
+
+repo_name: ngyngcphu/mkdocs-tool
+repo_url: https://github.com/ngyngcphu/mkdocs-tool
+
+copyright: Copyright &copy; 2023 TickLab. Made by Engineering team.
+
+theme:
+  name: material
+  custom_dir: overrides
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - content.code.copy
+    - content.code.annotate
+    - search.suggest
+    - search.highlight
+    - search.share
+  favicon: assets/TickLab-logo.svg
+  logo: assets/TickLab-logo.svg
+  palette:
+    - scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+nav:
+  - Trang chủ: index.md
+  - Bài viết:
+      - blog/index.md
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/TickLabVN
+    - icon: fontawesome/brands/facebook
+      link: https://www.facebook.com/ticklab.vn
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/@TickLab
+
+extra_css:
+  - stylesheets/extra.css
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+extra_javascript:
+  - javascripts/katex.js 
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+
+plugins:
+  - blog:
+      categories_allowed:
+        - Engineering
+        - Research
+      pagination_per_page: 5
+      post_url_format: "{slug}"
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - search
+
+markdown_extensions:
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true

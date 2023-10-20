@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  mkdocs-tool:
+    container_name: mkdocs-tool
+    image: ghcr.io/ngyngcphu/mkdocs-tool:latest
+    volumes: [.:/docs]
+    ports:
+      - 8000:8000
+    restart: always
