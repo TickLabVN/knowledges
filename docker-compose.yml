@@ -1,9 +1,9 @@
 version: '3.8'
 
 services:
-  mkdocs-tool:
-    container_name: mkdocs-tool
-    image: ghcr.io/ngyngcphu/mkdocs-tool:latest
+  knowledges:
+    container_name: knowledges
+    image: ghcr.io/ticklabvn/knowledges:latest
     volumes: [.:/docs]
     ports:
       - 8000:8000
