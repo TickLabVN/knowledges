@@ -7,7 +7,7 @@ on:
       - '*.md'
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ngyngcphu/mkdocs-tool
+  IMAGE_NAME: ticklabvn/knowledges
   ORG_USERNAME: ${{ github.actor }}
 
 permissions:
