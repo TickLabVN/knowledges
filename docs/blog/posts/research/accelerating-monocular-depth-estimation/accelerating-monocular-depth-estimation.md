@@ -271,7 +271,7 @@ Chúng tôi đã trình bày kết quả so sánh sâu về băng thông xử l�
 
 Trong phần tới, chúng tôi sẽ trình bày cách triển khai mô hình MDE lên Jetson Nano và tăng tốc độ xử lý bằng TensorRT.
 
-## Tham khảo
+### Tham khảo
 
 [1] [https://medium.com/@zergtant/accelerating-model-inference-with-tensorrt-tips-and-best-practices-for-pytorch-users-7cd4c30c97bc](https://medium.com/@zergtant/accelerating-model-inference-with-tensorrt-tips-and-best-practices-for-pytorch-users-7cd4c30c97bc)model.eval()
 
