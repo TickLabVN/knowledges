@@ -45,6 +45,21 @@ nav:
   - Trang chủ: index.md
   - Bài viết:
       - blog/index.md
+  - Challenges:
+      - challenges/index.md
+      - Engineering (CS):
+          - CSV Query Tool:
+              - challenges/csv-query-tool/index.md
+              - Language description: challenges/csv-query-tool/language-description.md
+              - Timelines:
+                  - challenges/csv-query-tool/timelines/week1.md
+                  - challenges/csv-query-tool/timelines/week2.md
+                  - challenges/csv-query-tool/timelines/week3_n_week4.md
+                  - challenges/csv-query-tool/timelines/week5.md
+                  - challenges/csv-query-tool/timelines/week6.md
+
+          - Personal Finance App: challenges/personal-finance-app.md
+          - JSON in C++: challenges/json-in-cpp.md
 
 extra:
   generator: false
@@ -60,11 +75,14 @@ extra_css:
   - stylesheets/extra.css
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
 extra_javascript:
-  - javascripts/katex.js 
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js  
+  - javascripts/katex.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
 
 plugins:
+  - tags:
+      enabled: true
+      tags_file: challenges/index.md
   - blog:
       categories_allowed:
         - Engineering
