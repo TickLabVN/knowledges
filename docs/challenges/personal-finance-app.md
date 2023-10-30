@@ -63,7 +63,7 @@ Use `git` and `Github` to keep track of changes in your code and collaborate wit
 
 ## Time Management
 
-Set aside dedicated time for your coding project. According to project size, it should take less than 30 days. Consistency and regular practice will help you improve your coding skills faster. Don't rely on motivation alone; discipline is essential.
+Set aside dedicated time for your coding project. According to project size, it should take less than **75 days**. Consistency and regular practice will help you improve your coding skills faster. Don't rely on motivation alone; discipline is essential.
 
 ## Keep It Personal
 
