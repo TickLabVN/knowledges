@@ -1,12 +1,10 @@
 name: gen-docs
 on:
-  pull_request:
-    branches:
-      - main
-    paths-ignore:
-      - '*.md'
+  workflow_dispatch:
+
 permissions:
   contents: write
+  
 jobs:
   deploy:
     runs-on: ubuntu-latest
