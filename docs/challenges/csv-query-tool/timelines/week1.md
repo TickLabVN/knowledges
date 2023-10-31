@@ -11,11 +11,11 @@
   - Install [Valgrind](https://valgrind.org/). This tool will help you detect memory leaks in your program
 2. Set up your own repository on Github to store solution for this challenge.
 3. Try SQLite
-4. Read the challenge described in [README.md](../README.md) carefully.
+4. Read the challenge described in [README.md](../index.md) carefully.
 
 ## Question
 
-Regarding to [requirements](../README.md#requirements), there will be 4 parts in your program:
+Regarding to [requirements](../index.md#requirements), there will be 4 parts in your program:
 
 - Command-line interface
 - Query parsing

@@ -80,7 +80,7 @@ Query validation serves as a way to ensure that the provided query adheres to a 
 
 ## Goals
 
-Follow the [language description](../query-language-description.md):
+Follow the [language description](../language-description.md):
 
 - Implement a CLI (command-line interface) that receive query string as parameter and then print it to console
 - Validate and extract data from `INSERT` statement

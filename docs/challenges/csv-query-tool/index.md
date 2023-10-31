@@ -52,7 +52,7 @@ The executable file `exql` must be:
 - NO MEMORY LEAKS after program exit
 - Pass all test cases
 
-The language description is at [here](./csv-query-tool/language-description.md]).
+The language description is at [here](./language-description.md).
 
 ## Learning Objectives
 
@@ -72,11 +72,11 @@ Furthermore, you will have ideas with:
 
 The challenge will last for 8 weeks but may extend or conclude sooner based on your ability.
 
-- [Week 1](./csv-query-tool/timelines/week1.md): Set up working environment and find out more about this challenges
-- [Week 2](./csv-query-tool/timelines/week2.md): Introduce to CLI, query validating & query parsing
-- [Week 3 & Week 4](./csv-query-tool/timelines/week3_n_week4.md): Construct a query tree
-- [Week 5](./csv-query-tool/timelines/week5.md): Validate query commands against a file definition.
-- [Week 6](./csv-query-tool/timelines/week6.md): Comming soon ...
+- [Week 1](./timelines/week1.md): Set up working environment and find out more about this challenges
+- [Week 2](./timelines/week2.md): Introduce to CLI, query validating & query parsing
+- [Week 3 & Week 4](./timelines/week3_n_week4.md): Construct a query tree
+- [Week 5](./timelines/week5.md): Validate query commands against a file definition.
+- [Week 6](./timelines/week6.md): Comming soon ...
 
 ## Documents / Keywords
 
