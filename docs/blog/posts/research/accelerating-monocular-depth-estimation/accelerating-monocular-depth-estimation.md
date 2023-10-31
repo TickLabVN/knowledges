@@ -9,6 +9,11 @@ comments: true
 
 # Accelerating Monocular Depth Estimation using TensorRT
 
+<figure markdown>
+
+![mono-depth-intro](./images/mono-depth-intro.png){ width="300" }
+</figure>
+
 ***Depth estimation*** là bài toán kinh điển trong lĩnh vực xử lý ảnh và được ứng dụng trong nhiều lĩnh vực như xe tự hành, xây dựng cấu trúc 3D, điều khiển robot. Thông tin này thường được ước lượng bằng thiết bị cảm biến như LiDAR, hoặc camera đặc biệt như Stereo camera. Với sự phát triển của Deep Learning, nhiều nhà nghiên cứu bắt đầu quan tâm đến việc ứng dụng các mạng học sâu để giải quyết bài toán này. ***Monocular Depth Estimation (MDE)*** là bài toán sử dụng mạng học sâu để ước lượng depth dựa trên 1 ảnh. <!-- more -->
 
 Trong nghiên cứu khoa học, các tiêu chí về ứng dụng thực tế bao gồm như khả năng triển khai mô hình, tốc độ thực thi, … thường được bỏ qua. Hiện tại, nhóm nghiên cứu của chúng tôi đang giải quyết MDE cho lĩnh vực Autonomous Driving. Chúng tôi chỉ tập trung nghiên cứu các giải pháp sao cho độ sâu ước lượng khớp với đô sâu từ LiDAR nhiều nhất có thể. Tuy nhiên, Autonomous driving là những bài toán có yêu cầu nghiêm ngặt về thông lượng và độ trễ mong đợi từ các mô hình học sâu. Hôm nay, chúng tôi muốn trả lời câu hỏi: ***“Khả năng triển khai thực tế của mô hình MDE này như thế nào?”*** 
