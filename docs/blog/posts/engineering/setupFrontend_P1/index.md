@@ -3,7 +3,7 @@ date: 2023-11-18
 authors:
     - ngyngcphu
 categories:
-  - Engineer
+  - Engineering
 comments: true
 ---
 # Set up Front-end development environment (Part 1)
@@ -12,32 +12,11 @@ comments: true
 ![](./images/hero-image.png){ width="300" }
 </figure>
 
-## Mục lục
-1. [Lời mở đầu](#introduction)
-
-2. [Nội dung](#content)  
-2.1. [Sơ lược về các công cụ sử dụng](#tool-overview)
-2.2 [Bắt đầu với một ví dụ đơn giản](#example)
-2.3. [Cài đặt và cấu hình môi trường phát triển](#setup-and-config)  
-2.3.a. [Cài đặt](#setup)  
-2.3.b. [Cấu hình](#config)
-2.4. [Tổ chức source code](#sourcecode-structure)
-
-3. [Kết luận](#conclusion)
-
-4. [Tham khảo](#ref)
-
-<a name = "introduction"></a>
-
-## 1. Lời mở đầu
 Bài viết này dựa trên những kinh nghiệm mà mình học được khi tham gia vào một dự án tại TickLab với vai trò là Front-end developer. Nội dung chia sẻ bao gồm việc cài đặt, cấu hình môi trường phát triển giao diện người dùng trên nền tảng web từ lúc project bắt đầu vào giai đoạn hiện thực và cách làm việc nhóm hiệu quả giữa các thành viên trong team để đảm bảo chất lượng mã nguồn. Bạn đọc tạo issue trên [github repository](https://github.com/ngyngcphu/react-template) của mình nếu có bất cứ thắc mắc hay góp ý gì đến bài viết nhé.
 
-<a name = "content"></a>
+<!-- more -->
 
-## 2. Nội dung
-<a name = "tool-overview"></a>
-
-### 2.1. Sơ lược về các công cụ sử dụng
+## 1. Sơ lược về các công cụ sử dụng
 
 - ReactJS là một thư viện JavaScript, được dùng để xây dựng giao diện người dùng linh hoạt và dễ tái sử dụng ([https://react.dev/](https://react.dev/)).
 - TailwindCSS là một framework CSS mạnh mẽ cho phép xây dựng giao diện nhanh chóng và dễ dàng ([https://tailwindcss.com/](https://tailwindcss.com/)).
@@ -46,9 +25,7 @@ Bài viết này dựa trên những kinh nghiệm mà mình học được khi 
 - TypeScript là một ngôn ngữ lập trình phổ biến, là một phiên bản mở rộng của JavaScript với hỗ trợ kiểu dữ liệu tĩnh, giúp giảm lỗi và nâng cao hiệu suất phát triển ([https://www.typescriptlang.org/](https://www.typescriptlang.org/)).
 - ESLint, Prettier, Lint-staged, Husky: Bộ công cụ kiểm tra và duy trì chất lượng mã nguồn trong quá trình phát triển phần mềm. Các công cụ này giúp đảm bảo mã nguồn tuân thủ các quy tắc và tiêu chuẩn viết mã, tạo ra mã dễ đọc, dễ bảo trì và dễ cộng tác.
 
-<a name = "example"></a>
-
-### 2.2. Bắt đầu với một ví dụ đơn giản
+## 2. Bắt đầu với một ví dụ đơn giản
 
 Mục tiêu của bài viết là giới thiệu cách cài đặt môi trường phát triển giao diện người dùng, không đi sâu vào việc hiện thực sản phẩm. Các bạn có thể tự mình hoàn thiện project nhỏ này dựa trên template mà chúng ta sẽ xây dựng.
 
@@ -60,12 +37,9 @@ Giả sử bạn có một yêu cầu xây dựng giao diện của một ứng 
 
 Tiếp theo, bạn cần tạo môi trường phát triển cho các developers trong team. Ở đây mình chỉ giới thiệu cách cài đặt các cấu hình cần thiết và tạo cấu trúc thư mục cho việc phát triển Front-end, các API từ Back-end sẽ được mock bằng cách đơn giản trả về chuỗi string mà không hiện thực chi tiết. 
 
-<a name = "setup-and-config"></a>
+## 3. Cài đặt và cấu hình môi trường phát triển
 
-### 2.3. Cài đặt và cấu hình môi trường phát triển
-<a name = "setup"></a>
-
-#### 2.3.a. Cài đặt
+### 3.1. Cài đặt
 
 - Vì chúng ta đang làm việc với Typescript nên cần phải có một runtime environment và một package manager. Mình chọn 2 công cụ phổ biến nhất là **node.js** và **yarn.** Các bạn vào trang chủ của node.js ([https://nodejs.org](https://nodejs.org/)) để cài đặt node, một trình quản lý gói **npm** cũng được cài kèm với node. Bạn có thể sử dụng luôn npm để thay thế cho yarn nhưng yarn sử dụng cache hiệu quả hơn để lưu trữ các gói đã tải, giúp tiết kiệm thời gian và băng thông khi cài đặt lại. Cài đặt yarn bằng command line:
     
@@ -86,10 +60,8 @@ Tiếp theo, bạn cần tạo môi trường phát triển cho các developers 
     Ta sẽ có một thư mục **react-template,** xóa các file: App.css, .eslintrc.cjs. Cấu trúc thư mục như sau:
     
     ![structure-folder](images/structure-folder.png)
-    
-<a name = "config"></a>
 
-#### 2.3.b. Cấu hình
+### 3.2. Cấu hình
 
 Sau mỗi bước cấu hình, các bạn có thể xem lại cấu trúc thư mục tương ứng với từng commit của mình trên [github](https://github.com/ngyngcphu/react-template) nhé.
 
@@ -99,14 +71,14 @@ Sau mỗi bước cấu hình, các bạn có thể xem lại cấu trúc thư m
     
     - Install **tailwindcss** qua yarn và tạo một `tailwind.config.js` file (lưu ý nên cài tailwindcss ở **devDependencies** của project vì các class element trong Tailwind sẽ được generate thành các file CSS tĩnh trước khi chạy trên trình duyệt):
     
-    ```jsx
-    yarn add -D tailwindcss
-    yarn tailwindcss init
-    ```
+        ```jsx
+        yarn add -D tailwindcss
+        yarn tailwindcss init
+        ```
     
     - Thêm đường dẫn đến các file sử dụng tailwind trong `tailwind.config.js` :
         
-        ```jsx
+        ```js
         /** @type {import('tailwindcss').Config} */
         export default {
           content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -117,9 +89,9 @@ Sau mỗi bước cấu hình, các bạn có thể xem lại cấu trúc thư m
         }
         ```
         
-    - Thêm các chỉ thị `@tailwind` cho từng layer của Tailwind vào tệp `index.css` để kích hoạt và sử dụng các lớp CSS đã được định nghĩa sẵn trong Tailwind CSS framework. Cụ thể, có ba lớp chính cần thêm chỉ thị `@tailwind`, tham khảo [tại đây](https://tailwindcss.com/docs/functions-and-directives](https://tailwindcss.com/docs/functions-and-directives ), lưu ý xóa toàn bộ nội dung cũ trong file `index.css` và chỉ cần thêm 3 chỉ thị tailwind:
+    - Thêm các chỉ thị `@tailwind` cho từng layer của Tailwind vào tệp `index.css` để kích hoạt và sử dụng các lớp CSS đã được định nghĩa sẵn trong Tailwind CSS framework. Cụ thể, có ba lớp chính cần thêm chỉ thị `@tailwind`, tham khảo [tại đây](https://tailwindcss.com/docs/functions-and-directives), lưu ý xóa toàn bộ nội dung cũ trong file `index.css` và chỉ cần thêm 3 chỉ thị tailwind:
         
-        ```jsx
+        ```css
         @tailwind base;
         @tailwind components;
         @tailwind utilities;
@@ -133,7 +105,7 @@ Sau mỗi bước cấu hình, các bạn có thể xem lại cấu trúc thư m
         
         Ta sẽ thấy một folder `dist` xuất hiện chứa file `output.css` là một file CSS tĩnh được generate từ tailwind. Ta import `dist/output.css` vào file App.tsx, đồng thời xóa toàn bộ nội dung cũ và thay bằng đoạn code đơn giản sau:
         
-        ```jsx
+        ```ts
         import '../dist/output.css';
         function App() {
           return (
@@ -158,7 +130,7 @@ Sau mỗi bước cấu hình, các bạn có thể xem lại cấu trúc thư m
         
     - Thêm file `postcss.config.js` tại root folder với nội dung như sau:
         
-        ```jsx
+        ```js
         export default {
           plugins: {
             tailwindcss: {},
@@ -178,7 +150,7 @@ Sau mỗi bước cấu hình, các bạn có thể xem lại cấu trúc thư m
     Trong cùng một dự án, các thành viên trong nhóm có thể có cách viết mã riêng. Sử dụng bộ công cụ này giúp đảm bảo mọi người viết mã theo cùng một quy tắc, từ định dạng mã đến quy tắc viết mã. Điều này làm cho mã nguồn dễ đọc hơn và giảm nguy cơ có những sai sót đơn giản.
     
     1. **Prettier**
-        - Là một công cụ định dạng mã tự động và đồng nhất hóa cú pháp mã. Prettier giúp đảm bảo mã nguồn có cùng một cấu trúc, dấu cách và cú pháp, tạo ra mã đẹp và dễ đọc, tham khảo tại ([https://prettier.io/](https://prettier.io/)). Cài đặt `prettier` ở devDependencies:
+        - Là một công cụ định dạng mã tự động và đồng nhất hóa cú pháp mã. Prettier giúp đảm bảo mã nguồn có cùng một cấu trúc, dấu cách và cú pháp, tạo ra mã đẹp và dễ đọc, tham khảo [tại đây](https://prettier.io/). Cài đặt `prettier` ở devDependencies:
             
             ```jsx
             yarn add -D --exact prettier
@@ -186,7 +158,7 @@ Sau mỗi bước cấu hình, các bạn có thể xem lại cấu trúc thư m
             
         - Tạo file `.prettierrc` để cấu hình prettier với các rule cơ bản như sau:
             
-            ```jsx
+            ```js
             {
                 "printWidth": 100,      // ensure that lines of code are no longer than 100 characters.
                 "singleQuote": true,    // require Prettier to use single quotes (') instead of double quotes (") to wrap around strings.
@@ -201,7 +173,7 @@ Sau mỗi bước cấu hình, các bạn có thể xem lại cấu trúc thư m
             
         - Tạo file `.prettierignore` để Prettier biết các file nào không cần định dạng:
             
-            ```jsx
+            ```js
             dist
             node_modules
             package*.json
@@ -210,9 +182,10 @@ Sau mỗi bước cấu hình, các bạn có thể xem lại cấu trúc thư m
             *.md
             ```
             
-        - Ta định dạng file App.tsx bằng command line `yarn prettier ./src/App.tsx --write` hoặc thêm một script command cho toàn bộ project trong file package.json `"format": "prettier '**/*.{tsx,ts,js,json,md,yml,yaml}' --write"`
+        - Ta định dạng file App.tsx bằng command line `yarn prettier ./src/App.tsx --write` hoặc thêm một script command cho toàn bộ project trong file package.json `"format": "prettier '**/*.{tsx,ts,js,json,md,yml,yaml}' --write"`.
+
     2. **ESLint**
-        - Là một công cụ kiểm tra lỗi mã nguồn và quy tắc viết mã trong JavaScript và TypeScript, giúp phát hiện và sửa các lỗi cú pháp, logic và code convention trong mã nguồn, tham khảo tại ([https://eslint.org/](https://eslint.org/)). Cài đặt `eslint` cùng với `eslint-config-prettier` (dùng để tắt các quy tắc không cần thiết hoặc xung đột với prettier) và một plugin của eslint là `eslint-plugin-react-hooks` (dùng khi sử dụng các react hooks và cần tuân theo Rules of Hooks) và  ở devDependencies:
+        - Là một công cụ kiểm tra lỗi mã nguồn và quy tắc viết mã trong JavaScript và TypeScript, giúp phát hiện và sửa các lỗi cú pháp, logic và code convention trong mã nguồn, tham khảo [tại đây](https://eslint.org/). Cài đặt `eslint` cùng với `eslint-config-prettier` (dùng để tắt các quy tắc không cần thiết hoặc xung đột với prettier) và một plugin của eslint là `eslint-plugin-react-hooks` (dùng khi sử dụng các react hooks và cần tuân theo Rules of Hooks) và  ở devDependencies:
             
             ```jsx
             yarn add -D eslint eslint-config-prettier eslint-plugin-react-hooks
@@ -220,7 +193,7 @@ Sau mỗi bước cấu hình, các bạn có thể xem lại cấu trúc thư m
             
         - Tạo file `.eslintrc` để cấu hình eslint, thêm các rules, biến môi trường và các plugins cơ bản sau:
             
-            ```jsx
+            ```js
             {
               "parser": "@typescript-eslint/parser",          // specify that the TypeScript ESLint parser should be used to analyze TypeScript code.
               "extends": [
@@ -251,23 +224,24 @@ Sau mỗi bước cấu hình, các bạn có thể xem lại cấu trúc thư m
             
             - Bỏ các Linting trong compilerOptions vì đã có ESLint.
             - Thay đổi đường dẫn file trong `include` để chỉ định Typescript Compiler chỉ cần biên dịch các file sau:
-            
-            ```jsx
-            "include": ["src", "**/*.ts", "**/*.tsx", "**/*.js", "*.cjs"]
-            ```
+              
+                ```js
+                "include": ["src", "**/*.ts", "**/*.tsx", "**/*.js", "*.cjs"]
+                ```
             
             - Thay đổi tên các đuôi `*.config.js` (tailwind.config.js, postcss.config.js) thành đuôi `*.config.cjs` (tailwind.config.cjs, postcss.config.cjs) cho phù hợp với các đường dẫn file trong mục `include` (đồng nghĩa với việc thay đổi syntax từ ESModule sang CommonJS).
             - Một vài thay đổi khác đã được thực hiện trong compilerOptions nhưng không trình bày cụ thể tại đây, các bạn xem tại [commit](https://github.com/ngyngcphu/react-template/commit/d72437d8c64dd3b493cab238c00ed2680d6124c0) này của mình trên github nhé.
         - Tạo file `.eslintignore` để ESLint biết các file nào không cần kiểm tra:
             
-            ```jsx
-            dist
-            node_modules
-            ```
+                ```js
+                dist
+                node_modules
+                ```
             
-        - Ta chạy eslint file App.tsx bằng command line `yarn eslint ./src/App.tsx --fix` hoặc thêm một script command cho toàn bộ project trong file package.json `"lint": "eslint '**/*.{tsx,ts,js}' --fix"`
+        - Ta chạy eslint file App.tsx bằng command line `yarn eslint ./src/App.tsx --fix` hoặc thêm một script command cho toàn bộ project trong file package.json `"lint": "eslint '**/*.{tsx,ts,js}' --fix"`.
+
     3. **Lint-staged**
-        - Hai tool ở trên có thể đã đủ dùng cho chúng ta định dạng code, kiểm tra cú pháp, kiểm tra code convention nhưng có một nhược điểm. Đó là chúng đều chạy trên toàn bộ source code dù ta chỉ thay đổi duy nhất 1 file, gây tốn thời gian và resource của máy. Vì vậy, ta dùng thêm một tool nữa là **lint-staged**, tool này giới hạn phạm vi Prettier và ESLint chỉ trên những file nằm trong vùng **staging** của git (những file được **git add**), tham khảo tại (https://github.com/okonet/lint-staged). Cài đặt `lint-staged` ở devDependencies:
+        - Hai tool ở trên có thể đã đủ dùng cho chúng ta định dạng code, kiểm tra cú pháp, kiểm tra code convention nhưng có một nhược điểm. Đó là chúng đều chạy trên toàn bộ source code dù ta chỉ thay đổi duy nhất 1 file, gây tốn thời gian và resource của máy. Vì vậy, ta dùng thêm một tool nữa là **lint-staged**, tool này giới hạn phạm vi Prettier và ESLint chỉ trên những file nằm trong vùng **staging** của git (những file được **git add**), tham khảo [tại đây](https://github.com/okonet/lint-staged). Cài đặt `lint-staged` ở devDependencies:
             
             ```jsx
             yarn add -D lint-staged
@@ -275,7 +249,7 @@ Sau mỗi bước cấu hình, các bạn có thể xem lại cấu trúc thư m
             
         - Tạo file `.lintstagedrc.json` để giới hạn phạm vi của prettier và eslint:
             
-            ```jsx
+            ```js
             {
               "**/*.{ts,js,tsx}": ["eslint --fix"],
               "**/*.{tsx,ts,js,json,md,yml,yaml}": ["prettier --write"]
@@ -287,7 +261,7 @@ Sau mỗi bước cấu hình, các bạn có thể xem lại cấu trúc thư m
             ![lint-staged](images/lint-staged.png)
             
     4. **Husky**
-        - Với lint-staged, ta có thể gộp 2 lần chạy prettier và eslint chỉ bằng một command line duy nhất là `yarn lint-staged` nhưng vẫn còn 1 vấn đề: Sẽ ra sao nếu có thành viên nào đó trong team quên chạy `yarn lint-staged` trước khi commit code? Điều này có thể phá vỡ code convention mà team đã xây dựng, khiến cho code trở nên rối loạn, làm chậm thời gian phát triển sản phẩm. Chính vì vậy, **husky** ra đời như là một giải pháp cho vấn đề này. Husky là một tool trigger các hành động được cài đặt trong git hooks, tham khảo tại ([https://typicode.github.io/husky/](https://typicode.github.io/husky/)). Ta sẽ dùng husky để cấu hình pre-commit git hook cho lint-staged, đảm bảo chỉ cần các thành viên trong team commit code thì câu lệnh `yarn lint-staged` tự động được thực thi. Cài đặt `husky` ở devDependencies và install git hook:
+        - Với lint-staged, ta có thể gộp 2 lần chạy prettier và eslint chỉ bằng một command line duy nhất là `yarn lint-staged` nhưng vẫn còn 1 vấn đề: Sẽ ra sao nếu có thành viên nào đó trong team quên chạy `yarn lint-staged` trước khi commit code? Điều này có thể phá vỡ code convention mà team đã xây dựng, khiến cho code trở nên rối loạn, làm chậm thời gian phát triển sản phẩm. Chính vì vậy, **husky** ra đời như là một giải pháp cho vấn đề này. Husky là một tool trigger các hành động được cài đặt trong git hooks, tham khảo [tại đây](https://typicode.github.io/husky/). Ta sẽ dùng husky để cấu hình pre-commit git hook cho lint-staged, đảm bảo chỉ cần các thành viên trong team commit code thì câu lệnh `yarn lint-staged` tự động được thực thi. Cài đặt `husky` ở devDependencies và install git hook:
             
             ```jsx
             yarn add -D husky
@@ -317,14 +291,12 @@ Sau mỗi bước cấu hình, các bạn có thể xem lại cấu trúc thư m
     
     Sau khi cài đặt, ta cần cấu hình thêm file `tailwind.config.cjs` và `main.tsx` để tương thích với Material Tailwind, các bạn xem cụ thể tại [commit](https://github.com/ngyngcphu/react-template/commit/9b7c34181b0c031f18e096305cb16c5337a37ed0) này của mình trên github nhé.
 
-<a name = "sourcecode-structure"></a>
-
-### 2.4. Tổ chức source code
+## 4. Tổ chức source code
 
 Đối với một project, việc tổ chức source code một cách tường minh và rõ ràng là cực kỳ quan trọng, đặc biệt là khi kích cỡ project bắt đầu lớn dần và có thêm nhiều nhân sự tham gia vào, phải tối ưu được quá trình đọc hiểu của các developer trong team và hạn chế trùng lặp mã code. Dưới đây là một “pattern” mà team Engineer tại TickLab đã sử dụng trong quá trình phát triển sản phẩm, được minh họa qua ví dụ ở mục 2.2.  
 
 - Ta bắt đầu với yêu cầu thứ nhất: **Ứng dụng gồm trang đăng nhập, trang hiển thị tổng quan tất cả các project và trang hiển thị thông tin chi tiết của mỗi project.** Do đó, ta cần một thư mục `src/pages` chứa tất cả các trang UI chính. Tạo 3 trang trong thư mục `pages`:
-    - `AuthPage.tsx`: trang đăng nhập.
+    - `AuthPage`: trang đăng nhập.
     - `ProjectGeneralPage`: trang hiển thị tổng quan tất cả các project.
     - `ProjectDetailPage`: trang hiển thị thông tin chi tiết của mỗi project.
     
@@ -365,7 +337,7 @@ yarn add -D barrelsby
 
 Tạo file `.barrelsby.json` để xác định các thư mục cần đóng gói:
 
-```jsx
+```js
 {
     "directory": [
       "./src/components",
@@ -382,17 +354,13 @@ Tạo file `.barrelsby.json` để xác định các thư mục cần đóng gó
   }
 ```
 
-Tạo một script command `"barrels": "barrelsby --config .barrelsby.json -q"` và thực thi bằng command line `yarn barrels`, file `index.ts` sẽ tự động xuất hiện trong các thư mục được chỉ định bởi `.barelsby.json`. Cấu hình thêm paths và resolve alias tương ứng trong `tsconfig.json` và `vite.config.ts` (cụ thể tại [commit](https://github.com/ngyngcphu/react-template/commit/615530d3d6ab086f33831f1350dd75d0e325fc47) ), Sau đó, ta có thể sử dụng các path alias để đơn giản hóa các thao tác import.
+Tạo một script command `"barrels": "barrelsby --config .barrelsby.json -q"` và thực thi bằng command line `yarn barrels`, file `index.ts` sẽ tự động xuất hiện trong các thư mục được chỉ định bởi `.barelsby.json`. Cấu hình thêm paths và resolve alias tương ứng trong `tsconfig.json` và `vite.config.ts` (cụ thể tại [commit](https://github.com/ngyngcphu/react-template/commit/615530d3d6ab086f33831f1350dd75d0e325fc47)), Sau đó, ta có thể sử dụng các path alias để đơn giản hóa các thao tác import.
 
-<a name = "conclusion"></a>
-
-# 3. Kết luận
+## 5. Kết luận
 
 Mình sẽ kết thúc phần 1 của bài viết này tại đây, tất cả các bước setup đều được lưu lại theo từng commit tương ứng trên [github repository](https://github.com/ngyngcphu/react-template). Ở phần 2, mình sẽ chia sẻ với các bạn cách setup môi trường container để deploy ứng dụng web lên một máy ảo (Virtual Private Server) sử dụng Docker Container và Nginx Web Server dựa trên template này. Đây là bước tiền đề để tạo nên workflows CI/CD của project.
 
-<a name = "ref"></a>
-
-# 4. Tham khảo
+## 6. Tham khảo
 
 1. Responsve Design: [https://tailwindcss.com/docs/responsive-design](https://tailwindcss.com/docs/responsive-design)
 2. Sensor management web application: [https://github.com/HPCMonitoring/sensor-manager](https://github.com/HPCMonitoring/sensor-manager)
