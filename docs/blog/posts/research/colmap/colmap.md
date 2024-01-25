@@ -12,7 +12,7 @@ toc_depth: 2
 
 <figure markdown>
 
-![intro_image.jpg](./images/intro_image.jpg){ width="600" }
+![intro_image.png](./images/intro_image.png){ width="300" }
 </figure>
 
 Xây dựng lại cấu trúc 3D là một trong các ứng dụng quan trọng trong Thị giác máy tính. Với đầu vào là một loại các bức ảnh chụp xung quanh một đối tượng, yêu cầu đầu ra là hình ảnh không gian 3D của vật thể. Quá trình xây dưng này yêu cầu thực hiện nhiều bước và phức tạp. Trong phần này, chúng tôi sẽ giới thiệu các bạn phần mềm COLMAP - phần mềm đa dụng giúp bạn dễ dàng xây dựng không gian 3D của đổi tượng. Qua bài viết, chúng tôi hi vọng bạn đọc có thể tìm thấy được nguồn cảm hứng mới từ các bài toán thị giác máy tính. <!-- more -->
@@ -233,6 +233,6 @@ Trong bài viết này, chúng tôi đã trình bày các bước thực hiện 
 
 ## 7. Tham khảo
 
-- *Large-scale 3D modeling*. CVPR 2017 Tutorial - Large-­scale 3D Modeling from Crowdsourced Data. (n.d.) - [https://demuc.de/tutorials/cvpr2017/](https://demuc.de/tutorials/cvpr2017/)
-- *Vocabulary Tree -* [https://www.micc.unifi.it/delbimbo/wp-content/uploads/2013/12/A62_Vocabulary_tree.pdf](https://www.micc.unifi.it/delbimbo/wp-content/uploads/2013/12/A62_Vocabulary_tree.pdf)
-- Chahat Deep Singh. “Structure from Motion”, CMSC 426 Computer Vision
+- *Large-scale 3D modeling*. CVPR 2017 Tutorial - Large-­scale 3D Modeling from Crowdsourced Data. (n.d.) - [https://demuc.de/tutorials/cvpr2017/](https://demuc.de/tutorials/cvpr2017/).
+- *Vocabulary Tree -* [https://www.micc.unifi.it/delbimbo/wp-content/uploads/2013/12/A62_Vocabulary_tree.pdf](https://www.micc.unifi.it/delbimbo/wp-content/uploads/2013/12/A62_Vocabulary_tree.pdf).
+- Chahat Deep Singh. “Structure from Motion”, CMSC 426 Computer Vision.
