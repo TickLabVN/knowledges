@@ -2,49 +2,388 @@
 {% block tabs %}
 {{ super() }}
 <style>
-  .md-container {
-    background: linear-gradient(to bottom, var(--md-primary-fg-color), #363949 99%, var(--md-default-bg-color) 99%);
+/* Hero section styling */
+
+
+
+.mdx-container {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  min-height: calc(100vh - 450px);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.md-grid {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100rem;
+}
+
+.mdx-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+  color: var(--md-primary-bg-color);
+}
+
+.mdx-hero__content {
+  animation: slideUp 0.8s ease-out forwards;
+  max-width: 35rem;
+}
+
+.mdx-hero__content h1 {
+  font-size: 2.3rem; /* Adjusted size, originally 3.5rem */
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: var(--md-primary-bg-color);
+  animation: fadeIn 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.mdx-hero__content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  animation: fadeIn 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.mdx-hero__content .md-button {
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+.mdx-hero__image {
+  position: relative;
+  animation: slideIn 0.8s ease-out forwards;
+}
+
+.mdx-hero__image img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transform: perspective(1000px) rotateY(-5deg);
+  transition: transform 0.3s ease;
+}
+
+.mdx-hero__image img:hover {
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media screen and (max-width: 960px) {
+  .mdx-hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
   }
 
-  .md-header {
-    position: initial
+  .mdx-hero__content h1 {
+    font-size: 2.5rem;
   }
 
-  .md-main__inner {
-    margin: 0;
+  .mdx-container {
+    padding: 2rem 0;
   }
+}
 
-  .md-content {
+/* Override default MkDocs styles */
+.md-container {
+  background: linear-gradient(to bottom, var(--md-primary-fg-color), #363949 99%, var(--md-default-bg-color) 99%);
+}
+
+.md-header {
+  position: initial;
+}
+
+.md-main__inner {
+  margin: 0;
+}
+
+.md-content {
+  display: none;
+}
+
+@media screen and (min-width: 60em) {
+  .md-sidebar--secondary {
     display: none;
   }
+}
 
-  @media screen and (min-width:60em) {
-    .md-sidebar--secondary {
-      display: none
-    }
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    display: none;
+  }
+}
+
+/* Info Section Styling */
+.info-section {
+  width: 100%;
+  max-width: 1400px;
+  padding: var(--section-spacing) 2rem;
+  margin: 0 auto;
+  animation: fadeIn 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-tag {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  color: white;
+  margin: 1rem 0;
+}
+
+.section-header p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+}
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.info-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  max-height: 31rem;
+}
+
+.info-card:hover {
+  transform: translateY(-10px);
+}
+
+.card-image {
+  margin: -2rem -2rem 0rem -2rem;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.info-card h3 {
+  font-size: 1.2rem;
+  color: var(--md-primary-fg-color);
+  margin-bottom: 1rem;
+}
+
+.info-card p {
+  color: black;
+  line-height: 1.6;
+  margin-bottom: 4px;
+  font-size: 14px;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.primary-button {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border-radius: 100px;
+  background: var(--md-primary-fg-color);
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive design */
+@media screen and (max-width: 960px) {
+  .mdx-hero {
+    flex-direction: column;
+    text-align: center;
   }
 
-  @media screen and (min-width:76.25em) {
-    .md-sidebar--primary {
-      display: none
-    }
+  .mdx-hero__content,
+  .mdx-hero__image {
+    flex: 0 1 100%;
+    margin-bottom: 2rem;
   }
+
+  .mdx-hero__content h1 {
+    font-size: 2.5rem;
+  }
+
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .info-card {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Animations */
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 </style>
 <section class="mdx-container">
   <div class="md-grid md-typeset">
     <div class="mdx-hero">
-      <div class="mdx-hero__image">
-        <img src="assets/images/lab_member.jpg" alt="" width="1659" height="1200" draggable="false">
-      </div>
       <div class="mdx-hero__content">
-        <h1>Kho lưu trữ bài chia sẻ kiến thức</h1>
+        <h1>Knowledge Sharing Repository</h1>
         <p>{{ config.site_description }}</p>
-        <h4>
-          Xem thông tin chi tiết của chúng tôi tại
-          <a rel="me" href="https://ticklab.vn">
-            <strong style="text-decoration: underline;">ticklab.vn</strong>
-          </a>
-        </h4>
+        <a href="{{ page.next_page.url | url }}" class="md-button md-button--primary">
+          Get started
+        </a>
+        <a href="{{ config.repo_url }}" class="md-button">
+          View on GitHub
+        </a>
+      </div>
+      <div class="mdx-hero__image">
+        <img src="assets/images/lab_member.jpg" alt="Team Members" draggable="false">
+      </div>
+    </div>
+  </div>
+  
+  <div class="info-section">
+    <div class="section-header">
+      <span class="section-tag">WHAT WE DO</span>
+      <h2>Our Activities</h2>
+      <p>Explore our diverse range of activities and achievements</p>
+    </div>
+    
+    <div class="info-cards">
+      <div class="info-card">
+        <div class="card-image">
+          <img src="assets/images/ceac-ticklab.png" alt="CEAC x TickLab">
+        </div>
+        <h3>Knowledge Sharing</h3>
+        <p>Special knowledge sharing sessions between TickLab and CEAC-HCMUT, featuring Hardware Engineering and Logic Design topics for deeper expertise exchange.</p>
+        <div class="card-actions">
+          <a href="https://www.facebook.com/photo?fbid=1171576724578999&set=pcb.1171576751245663" target=”_blank” class="primary-button">Learn More</a>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="card-image">
+          <img src="assets/images/tick-recruit.png" alt="TickRecruit">
+        </div>
+        <h3>Member Development</h3>
+        <p>Comprehensive mentorship program with experienced seniors, featuring structured onboarding and hands-on project experience for new members.</p>
+        <div class="card-actions">
+          <a href="https://www.facebook.com/photo?fbid=1167500008320004&set=a.550851749984836" target=”_blank” class="primary-button">Join Us</a>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="card-image">
+          <img src="assets/images/tick-lens.png" alt="TickLens">
+        </div>
+        <h3>Research Excellence</h3>
+        <p>Cutting-edge research achievements, including our latest paper acceptance at ACCV2024 on 3D object detection using innovative approaches.</p>
+        <div class="card-actions">
+          <a href="https://www.facebook.com/photo/?fbid=1173130871090251&set=a.550851749984836" target=”_blank” class="primary-button">Read More</a>
+        </div>
       </div>
     </div>
   </div>

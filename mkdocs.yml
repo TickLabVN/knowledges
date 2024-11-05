@@ -1,12 +1,11 @@
 site_name: TickLab - Start here, go anywhere
 site_url: https://ticklabvn.github.io/knowledge/
 site_author: TickLab Viet Nam
-site_description: Tổng hợp nội dung chia sẻ kiến thức trong quá trình nghiên cứu khoa học và phát triển dự án tại các phòng ban của TickLab.
-
+site_description: Summary of knowledge-sharing content during the research and project development process across departments at TickLab.
 repo_name: TickLabVN/knowledge
 repo_url: https://github.com/TickLabVN/knowledge
 
-copyright: Copyright &copy; 2023 TickLab. Made by Engineering team.
+copyright: Copyright &copy; 2024 TickLab. Made by Engineering team.
 
 theme:
   name: material
@@ -42,8 +41,8 @@ theme:
         name: Switch to light mode
 
 nav:
-  - Trang chủ: index.md
-  - Bài viết:
+  - Home: index.md
+  - Blog:
       - blog/index.md
   - Challenges:
       - challenges/index.md
