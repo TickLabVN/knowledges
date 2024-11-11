@@ -32,6 +32,13 @@ comments: true
     margin: 2em 0 1em;
 }
 </style>
+
+<figure markdown>
+
+![rl-intro](images/RECRUITMENT.png){ width="300" }
+
+</figure>
+
  <!-- more -->
 
 ## Part 1: Theory
