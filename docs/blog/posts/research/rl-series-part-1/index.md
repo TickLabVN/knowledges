@@ -853,4 +853,5 @@ If you want to discuss about certain parts of the article, or interesting RL ide
 ## References
 
 [1] R. S. Sutton and A. Barto, _Reinforcement learning : An introduction_. London: The Mit Press, 2018.
+
 [2] Gymnasium documentation. (n.d.). Retrieved November 7, 2024, from https://gymnasium.farama.org
