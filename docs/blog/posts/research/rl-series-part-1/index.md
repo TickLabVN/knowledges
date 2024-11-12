@@ -35,7 +35,7 @@ comments: true
 
 <figure markdown>
 
-![rl-intro](images/RECRUITMENT.png){ width="300" }
+![rl-intro](images/RECRUITMENT.png){ width="300"}
 
 </figure>
 
@@ -708,7 +708,7 @@ While being beneficial for problems with a large state space in which just a sma
 
 ## Part 2: Case Study
 
-Here’s a [notebook](https://github.com/baotram153/RL-case-studies/blob/main/Tabular-Methods/Classical-RL-Algos.ipynb){ target="\_blank" } that contains the code for all the algorithms mentioned above. In these experiments, we used 4 toy environments (Frozen Lake - deterministic, Frozen Lake - slippery, Cliff Walking and Taxi) provided by `gymnasium` - an environment that provide API for lots of useful Reinforcement Learning environments. `Frozen Lake` and `Cliff Walking` are environments where the agent has to reach the goal (a present/cookie) without breaking the ice/falling off the grid, while `Taxi` is an environment where our agent (a taxi) navigating to passengers, pick them up and deliver them to the building.
+Here’s a [notebook](https://github.com/baotram153/RL-case-studies/blob/main/Tabular-Methods/Classical-RL-Algos.ipynb){ target="\_blank" } that contains the code for all the algorithms mentioned above. In these experiments, we used 4 toy environments (Frozen Lake - deterministic, Frozen Lake - slippery, Cliff Walking and Taxi) provided by `gymnasium` - a library that provides API for lots of useful Reinforcement Learning environments. `Frozen Lake` and `Cliff Walking` are environments where the agent has to reach the goal (a present/cookie) without breaking the ice/falling off the grid, while `Taxi` is an environment where our agent (a taxi) navigates to passengers, picks them up and delivers them to the building.
 
 If there’s a mistake that I’ve made, or there is something in the notebook that confuses you, feel free to reach out to me!
 
@@ -716,27 +716,35 @@ There are a few things that you should notice:
 
 ### 1. Sarsa vs Q-learning in Cliff Walking
 
-Sarsa chose the safer path than Q-learning. This happens because the state-action values calculated by Sarsa take into account all possible states and actions from the policy and the environment dynamics, this results in this algorithm concerning about both the reward of reaching the goal and the penalty of falling off the cliff, while the state-action values calculated by Q-learning only takes into account the actions that maximize the reward, hence the agent choose the shortest path to get to the goal. In other word, agent learned with Sarsa algorithm choose the path that maximizes expected return, while agent learned with Q-learning algorithm chose the path that maximized greatest possible return.
+Sarsa chose the safer path than Q-learning. This happens because the state-action values calculated by Sarsa take into account all possible states and actions from the policy and the environment dynamics, this results in this algorithm concerning about both the reward of reaching the goal and the penalty of falling off the cliff, while the state-action values calculated by Q-learning only takes into account the actions that maximize the reward, hence the agent chose the shortest path to get to the goal. In other words, agent learned with Sarsa algorithm chose the path that maximized expected return, while agent learned with Q-learning algorithm chose the path that maximized greatest possible return.
 
 <figure markdown>
 
-![Figure 10: The optimal policy found by SARSA in Cliff Walking environment.](images/SARSA_Cliff_Walking_0.gif)
-
+<!-- ![Figure 10: The optimal policy found by SARSA in Cliff Walking environment.](images/sarsa.mp4) -->
+<video width="700" controls>
+  <source src="images/sarsa.mp4" type="video/mp4">
+</video>
  <figcaption markdown>
  Figure 10: The optimal policy found by SARSA in Cliff Walking environment.
  </figcaption>
 
-</figure>
-
-<figure markdown>
-
-![Figure 11: The optimal policy found by Q-learning in Cliff Walking environment.](images/q_learning_Cliff_Walking_0.gif)
-
- <figcaption markdown>
- Figure 11: The optimal policy found by Q-learning in Cliff Walking environment.
 </figcaption>
 
 </figure>
+
+
+<figure markdown>
+
+<!-- ![Figure 11: The optimal policy found by Q-learning in Cliff Walking environment.](images/q_learning.mp4) -->
+
+<video width="700" controls>
+  <source src="images/q_learning.mp4" type="video/mp4">
+</video>
+ <figcaption markdown>
+ Figure 11: The optimal policy found by Q-learning in Cliff Walking environment.
+</figcaption>
+</figure>
+
 
 ### 2. Value Iteration vs Policy Iteration
 
@@ -764,7 +772,7 @@ It’s easy to observe that Value Iteration yields better result than Policy Ite
 
 ### 3. How many steps are optimal for n-step bootstrapping algorithms?
 
-- The below plot shows the performance of n-step SARSA and n-step Tree Backup algorithms with different number of bootstrap steps. We can see that the step n set at 4 or 8 is optimal for both algorithms, in the Cliff Walking environment
+The below plot shows the performance of n-step SARSA and n-step Tree Backup algorithms with different number of bootstrap steps. We can see that the step n set at 4 or 8 is optimal for both algorithms, in the Cliff Walking environment
 
 <figure markdown>
 
@@ -788,7 +796,7 @@ It’s easy to observe that Value Iteration yields better result than Policy Ite
 
 ### 4. The best algorithm for each environment (not include n-step bootstrapping algorithms)
 
-We can see that all the algorithms have comparative performance to one another in our toy environments such as Cliff Walking or Taxi, except Monte Carlo. We can see from the graph “Steps until terminated” that Q-Learning is the fastest to converge, and Monte Carlo is the slowest. However, in different hyperparameter and environment settings, this may not remain true. Double Q-Learning algorithm may converge faster in more complex environment since it addresses the issue of positive bias made by Q-Learning. But in easy environments, it performs worse since there are two Q tables to be updated.
+We can see that all the algorithms have comparative performance to one another in our toy environments such as Cliff Walking or Taxi, except for Monte Carlo. We can see from the graph “Steps until terminated” that Q-Learning is the fastest to converge, and Monte Carlo is the slowest. However, in different hyperparameter and environment settings, this may not remain true. Double Q-Learning algorithm may converge faster in more complex environment since it addresses the issue of positive bias made by Q-Learning. But in easy environments, it performs worse since there are two Q tables to be updated.
 
 <figure markdown>
 
@@ -812,7 +820,7 @@ We can see that all the algorithms have comparative performance to one another i
 
 ### 5. The strange case of Monte Carlo’s gamma fine-tuning
 
-While running the experiment, we’ve observed Monte Carlo’s strange behaviors: its inability to converge although the greedy hyperparameter $\epsilon$ is set to be very high. This happens because the gamma component is so small ($0.9$) that the accumulated penalty for exploring around (the agent has greater risk of falling of the cliff, which gives a penalty of -100 in return) is much worse than standing at the same state or repeatedly visiting the same states (the maximum number of timesteps is 1000, so the accumulative penalty of standing at the same state is $\frac{0.9^{1000}\times(-1) - 0.9^0 \times (-1)}{0.9 - 1} \approx -10$), which is approximately the same as wandering around about 60 timesteps, and then entering the terminal state?! To address this problem, we have to increase the gamma ($\gamma$) hyperparameter to $0.99$ or $1$, and the algorithm converges perfectly.
+While running the experiment, we’ve observed Monte Carlo’s strange behaviors: its inability to converge although the greedy hyperparameter $\epsilon$ was set to be very high. This happened because the discounted factor ($\gamma$) was so small ($0.9$) that the accumulated penalty for exploring around (the agent had greater risk of falling off the cliff, which gave a penalty of -100 in return) was much worse than standing at the same state or repeatedly visiting the same states (the maximum number of timesteps is 1000, so the accumulative penalty of standing at the same state was $\frac{0.9^{1000}\times(-1) - 0.9^0 \times (-1)}{0.9 - 1} \approx -10$), which was approximately the same as wandering around about 60 timesteps, and then entering the terminal state?!  To address this problem, we had to increase the gamma ($\gamma$) hyperparameter to $0.99$ or $1$, and the algorithm converged perfectly.
 
 <figure markdown>
 
@@ -845,3 +853,4 @@ If you want to discuss about certain parts of the article, or interesting RL ide
 ## References
 
 [1] R. S. Sutton and A. Barto, _Reinforcement learning : An introduction_. London: The Mit Press, 2018.
+[2] Gymnasium documentation. (n.d.). Retrieved November 7, 2024, from https://gymnasium.farama.org/
