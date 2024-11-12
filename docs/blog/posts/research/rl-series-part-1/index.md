@@ -39,9 +39,11 @@ comments: true
 
 </figure>
 
+This article serves as a guide to help you enter the realm of Reinforcement Learning. The concepts in the "Theory" section are presented in an intuitive way, so you can build a solid understanding without unnecessary struggle. If you're more of a hands-on person, you can check out the notebook in the "Case Study" section, which experiments on the algorithms that we'll mention.
+
  <!-- more -->
 
-## Part 1: Theory
+## Section 1: Theory
 
 ### 1. Introduction
 
@@ -698,7 +700,7 @@ Here is the result of a small experiment. The environment is designed so that ea
 
 ![Figure 9: Relative performance between uniform sampling and on-policy sampling for a 1,000-state MDP with different branching factors.](images/Untitled24.png)
 
- <figcaption markdown>
+ <figcaption markdown>  
  Figure 9: Relative performance between uniform sampling and on-policy sampling for a 1,000-state MDP with different branching factors.
  </figcaption>
 
@@ -706,7 +708,7 @@ Here is the result of a small experiment. The environment is designed so that ea
 
 While being beneficial for problems with a large state space in which just a small subset is visited frequently, trajectory sampling can be detrimental in the sense that it can end up causing the same states to be updated again and again. This drawback can be seen from the graph where the performance of uniform sampling is better than on-policy sampling asymptotically.
 
-## Part 2: Case Study
+## Section 2: Case Study
 
 Here’s a [notebook](https://github.com/baotram153/RL-case-studies/blob/main/Tabular-Methods/Classical-RL-Algos.ipynb){ target="\_blank" } that contains the code for all the algorithms mentioned above. In these experiments, we used 4 toy environments (Frozen Lake - deterministic, Frozen Lake - slippery, Cliff Walking and Taxi) provided by `gymnasium` - a library that provides API for lots of useful Reinforcement Learning environments. `Frozen Lake` and `Cliff Walking` are environments where the agent has to reach the goal (a present/cookie) without breaking the ice/falling off the grid, while `Taxi` is an environment where our agent (a taxi) navigates to passengers, picks them up and delivers them to the building.
 
@@ -721,9 +723,12 @@ Sarsa chose the safer path than Q-learning. This happens because the state-actio
 <figure markdown>
 
 <!-- ![Figure 10: The optimal policy found by SARSA in Cliff Walking environment.](images/sarsa.mp4) -->
-<video width="700" controls>
-  <source src="images/sarsa.mp4" type="video/mp4">
-</video>
+<!-- <video width="700" controls loop="" muted="" autoplay="">
+  <source src="https://www.youtube.com/watch?v=2Z1lsVqk3nc">
+</video> -->
+
+<iframe width="650" height="300" src="https://www.youtube.com/embed/2Z1lsVqk3nc" frameborder="0" allowfullscreen></iframe>
+
  <figcaption markdown>
  Figure 10: The optimal policy found by SARSA in Cliff Walking environment.
  </figcaption>
@@ -736,11 +741,10 @@ Sarsa chose the safer path than Q-learning. This happens because the state-actio
 <figure markdown>
 
 <!-- ![Figure 11: The optimal policy found by Q-learning in Cliff Walking environment.](images/q_learning.mp4) -->
+<iframe width="650" height="300" src="https://www.youtube.com/embed/-UTGXvIQEyE" frameborder="0" allowfullscreen></iframe>
 
-<video width="700" controls>
-  <source src="images/q_learning.mp4" type="video/mp4">
-</video>
  <figcaption markdown>
+
  Figure 11: The optimal policy found by Q-learning in Cliff Walking environment.
 </figcaption>
 </figure>
@@ -824,10 +828,10 @@ While running the experiment, we’ve observed Monte Carlo’s strange behaviors
 
 <figure markdown>
 
-![Figure 18: Monte Carlo cannot converge in Cliff Walking environment when *discount factor* (gamma) is set to $0.9$.](images/image6.png)
+![Figure 18: Monte Carlo cannot converge in Cliff Walking environment when *discount factor* ($\gamma$) is set to $0.9$.](images/image6.png)
 
  <figcaption markdown>
- Figure 18: Monte Carlo cannot converge in Cliff Walking environment when _discount factor_ (gamma) is set to $0.9$.
+ Figure 18: Monte Carlo cannot converge in Cliff Walking environment when _discount factor_ ($\gamma$) is set to $0.9$.
  </figcaption>
 
 </figure>
@@ -837,16 +841,16 @@ While running the experiment, we’ve observed Monte Carlo’s strange behaviors
 ![Figure 19: Monte Carlo algorithm converges in Cliff Walking environment when *discount factor* (gamma) is set to $1$.](images/image7.png)
 
  <figcaption markdown>
- Figure 19: Monte Carlo algorithm converges in Cliff Walking environment when _discount factor_ (gamma) is set to $1$.
+ Figure 19: Monte Carlo algorithm converges in Cliff Walking environment when _discount factor_ ($\gamma$) is set to $1$.
  </figcaption>
 
 </figure>
 
-This is also one of the biggest problems of Reinforcement Learning: the time-consuming task of hyperparameter tuning: just a small change in hyperparameter can make the algorithm to be extremely unstable.
+This is also one of the biggest problems of Reinforcement Learning, that is the time-consuming task of hyperparameter tuning: just a small change in hyperparameter can make the algorithm to be extremely unstable.
 
 ## Conclusion
 
-We’ve gone a pretty far way through different classical Reinforcement Learning algorithms, and applied them in some toy environments like Frozen Lake, Cliff Walking and Taxi. We‘ve also learned about the trade-offs between those algorithms, between on-policy and off-policy methods, and between exploration and exploitation in finding the optimal solution; about different strategies to improve the efficiency of exploration and updating of state/action values; and about the drawbacks of Reinforcement Learning algorithms in general and how to avoid (well, a part of) them. We hope that this article will invoke your enthusiasm and eagerness to explore more about the subject matter.
+We’ve gone a pretty far way through different classical Reinforcement Learning algorithms, and applied them to some toy environments like Frozen Lake, Cliff Walking and Taxi. We‘ve also learned about the trade-offs between those algorithms, between on-policy and off-policy methods, and between exploration and exploitation in finding the optimal solution; about different strategies to improve the efficiency of exploration and updating of state/action values; and about the drawbacks of Reinforcement Learning algorithms in general and how to avoid (well, a part of) them. We hope that this article will invoke your enthusiasm and eagerness to explore more about the subject matter.
 
 If you want to discuss about certain parts of the article, or interesting RL ideas, feel free to contact me via email `tramdang7907129@gmail.com`
 
